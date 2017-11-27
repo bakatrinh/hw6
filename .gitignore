@@ -1,0 +1,6 @@
+/.metadata/
+.settings/
+.cproject
+.project
+/Debug
+.DS_Store
