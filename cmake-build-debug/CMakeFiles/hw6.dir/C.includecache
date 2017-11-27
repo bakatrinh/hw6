@@ -25,6 +25,4 @@ sys/time.h
 -
 sys/ioctl.h
 -
-pthread.h
--
 

@@ -1,0 +1,100 @@
+0:00.000: Child 1 message 1
+0:01.004: Child 1 message 2
+0:01.004: Child 2 message 2
+0:01.010: Child 3 message 2
+0:01.010: Child 4 message 2
+0:02.023: Child 1 message 3
+0:02.018: Child 2 message 3
+0:02.021: Child 3 message 3
+0:02.021: Child 4 message 3
+0:02.1424: Child 5 message: hello there
+
+0:04.026: Child 1 message 4
+0:04.029: Child 2 message 4
+0:04.033: Child 3 message 4
+0:04.032: Child 4 message 4
+0:06.037: Child 1 message 5
+0:06.035: Child 2 message 5
+0:06.043: Child 3 message 5
+0:06.035: Child 4 message 5
+0:07.046: Child 1 message 6
+0:07.042: Child 2 message 6
+0:07.047: Child 3 message 6
+0:07.045: Child 4 message 6
+0:07.795: Child 5 message: this is a test
+
+0:09.046: Child 2 message 7
+0:09.046: Child 2 message 8
+0:09.057: Child 1 message 7
+0:09.057: Child 1 message 8
+0:09.058: Child 3 message 7
+0:09.058: Child 3 message 8
+0:09.046: Child 4 message 7
+0:09.046: Child 4 message 8
+0:11.049: Child 2 message 9
+0:11.065: Child 3 message 9
+0:12.085: Child 5 message: message 5
+
+0:13.071: Child 1 message 10
+0:13.060: Child 2 message 10
+0:13.063: Child 4 message 10
+0:14.070: Child 2 message 11
+0:14.070: Child 2 message 12
+0:14.081: Child 1 message 12
+0:14.086: Child 3 message 11
+0:14.074: Child 4 message 11
+0:16.081: Child 2 message 13
+0:16.092: Child 1 message 13
+0:16.093: Child 1 message 14
+0:16.077: Child 4 message 13
+0:16.089: Child 3 message 13
+0:16.089: Child 3 message 14
+0:17.804: Child 5 message: from process 5
+
+0:18.093: Child 2 message 15
+0:18.104: Child 1 message 15
+0:18.104: Child 1 message 16
+0:18.088: Child 4 message 15
+0:18.088: Child 4 message 16
+0:18.100: Child 3 message 15
+0:18.100: Child 3 message 16
+0:20.108: Child 1 message 17
+0:20.099: Child 4 message 17
+0:21.104: Child 2 message 18
+0:21.149: Child 4 message 18
+0:21.4475: Child 5 message: hello world
+
+0:22.114: Child 2 message 19
+0:22.172: Child 3 message 19
+0:23.132: Child 1 message 20
+0:23.121: Child 2 message 20
+0:23.170: Child 4 message 20
+0:23.182: Child 3 message 20
+0:24.131: Child 2 message 21
+0:24.131: Child 2 message 22
+0:24.142: Child 1 message 21
+0:24.142: Child 1 message 22
+0:24.193: Child 3 message 21
+0:24.181: Child 4 message 22
+0:25.153: Child 1 message 23
+0:25.153: Child 1 message 24
+0:25.142: Child 2 message 24
+0:25.203: Child 3 message 23
+0:25.4259: Child 5 message: testing
+
+0:27.153: Child 2 message 25
+0:27.164: Child 1 message 25
+0:27.214: Child 3 message 25
+0:27.202: Child 4 message 25
+0:28.174: Child 1 message 26
+0:28.174: Child 1 message 27
+0:28.174: Child 1 message 28
+0:28.164: Child 2 message 27
+0:28.164: Child 2 message 28
+0:28.164: Child 2 message 29
+0:28.212: Child 4 message 26
+0:28.213: Child 4 message 27
+ild 4 message 29
+0:30.185: Child 1 message 30
+0:30.174: Child 2 message 30
+0:30.223: Child 4 message 30
