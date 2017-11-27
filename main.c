@@ -74,24 +74,6 @@ void getInput() {
     }
 }
 
-int calculateTimestampSec(struct timeval start, struct timeval stop) {
-    return stop.tv_sec - start.tv_sec;
-}
-
-int calculateTimestampUSec(struct timeval start, struct timeval stop) {
-    return stop.tv_usec - start.tv_usec;
-}
-
-const char *generateTimeStamp(int timestampSec, int timestampUSec) {
-    char returnString[48];
-    int minutes = (timestampSec) / 60;
-    int seconds = (timestampSec) % 60;
-    int microseconds = (timestampUSec) / 100;
-    //printf("%ld:%02ld.%03ld", minutes, seconds, microseconds);
-    snprintf(returnString, sizeof(returnString), "%ld:%02ld.%03ld", minutes, seconds, microseconds);
-    return returnString;
-}
-
 // Generate a random number between nMin and nMax. Example nMin = 2, and nMax = 4 will
 // randomly generate either 2 or 3 or 4
 int RandomNumberGenerator(const int nMin, const int nMax) {
@@ -112,44 +94,15 @@ int main(int argc, char **argv) {
         fprintf(stderr, "pipe() failed");
         return 1;
     }
-//
-//    // Fork a child process.
-//    pid1 = fork();
-//    if (pid1 > 0) {
-//        // PARENT PROCESS.
-//
-//        // Close the unused READ end of the pipe.
-//        close(fd[READ_END]);
-//
-//        write(fd[WRITE_END], write_msg, strlen(write_msg) + 1);
-//        printf("Parent (%d): Wrote: '%s' to the pipe.\n", pid1, write_msg);
-//
-//        // Close the WRITE end of the pipe.
-//        close(fd[WRITE_END]);
-//    } else if (pid1 == 0) {
-//        // CHILD PROCESS.
-//        // Close the unused WRITE end of the pipe.
-//        close(fd[WRITE_END]);
-//
-//        read(fd[READ_END], read_msg, BUFFER_SIZE);
-//        printf("Child (%d): Read: '%s' from the pipe.\n", pid1,
-//               read_msg);
-//
-//        // Close the READ end of the pipe.
-//        close(fd[READ_END]);
-//    } else {
-//        fprintf(stderr, "fork() failed");
-//        return 1;
-//    }
     pid1 = fork();
     if (pid1 == 0) {
-        close(fd[0]);
+        // close input side
+        close(fd[READ_END]);
         // CHILD PROCESS.
         struct timeval stop, start;
         char messageString[48];
         // sets initial time
         gettimeofday(&start, NULL);
-
         gettimeofday(&stop, NULL);
         int timestampSec = stop.tv_sec - start.tv_sec;
         int timestampUSec = stop.tv_usec - start.tv_usec;
@@ -157,9 +110,10 @@ int main(int argc, char **argv) {
         while (timestampSec <= 30) {
             int minutes = (timestampSec) / 60;
             int seconds = (timestampSec) % 60;
-            int microseconds = (timestampUSec) / 100;
-            snprintf(messageString, sizeof(messageString), "%ld:%02ld.%03ld: Child 1 message %d\n", minutes, seconds, microseconds, messageCount);
-            write(fd[WRITE_END], messageString, (strlen(messageString)+1));
+            int microseconds = abs((timestampUSec) / 100);
+            snprintf(messageString, sizeof(messageString), "%ld:%02ld.%03d: Child 1 message %d",
+                     minutes, seconds, microseconds, messageCount);
+            write(fd[WRITE_END], messageString, (strlen(messageString) + 1));
             sleep(RandomNumberGenerator(0, 2));
             messageCount++;
             gettimeofday(&stop, NULL);
@@ -167,11 +121,130 @@ int main(int argc, char **argv) {
             timestampUSec = stop.tv_usec - start.tv_usec;
         }
         exit(0);
-    }
-    else {
-        close(fd[1]);
-        while (read(fd[READ_END], readbuffer, sizeof(readbuffer)) != READ_END) {
-            printf("%s", readbuffer);
+    } else {
+        pid2 = fork();
+        if (pid2 == 0) {
+            // close input side
+            close(fd[READ_END]);
+            // CHILD PROCESS.
+            struct timeval stop, start;
+            char messageString[48];
+            // sets initial time
+            gettimeofday(&start, NULL);
+            gettimeofday(&stop, NULL);
+            int timestampSec = stop.tv_sec - start.tv_sec;
+            int timestampUSec = stop.tv_usec - start.tv_usec;
+            int messageCount = 1;
+            while (timestampSec <= 30) {
+                int minutes = (timestampSec) / 60;
+                int seconds = (timestampSec) % 60;
+                int microseconds = abs((timestampUSec) / 100);
+                snprintf(messageString, sizeof(messageString), "%ld:%02ld.%03d: Child 2 message %d",
+                         minutes, seconds, microseconds, messageCount);
+                write(fd[WRITE_END], messageString, (strlen(messageString) + 1));
+                sleep(RandomNumberGenerator(0, 2));
+                messageCount++;
+                gettimeofday(&stop, NULL);
+                timestampSec = stop.tv_sec - start.tv_sec;
+                timestampUSec = stop.tv_usec - start.tv_usec;
+            }
+            exit(0);
+        } else {
+            pid3 = fork();
+            if (pid3 == 0) {
+                // close input side
+                close(fd[READ_END]);
+                // CHILD PROCESS.
+                struct timeval stop, start;
+                char messageString[48];
+                // sets initial time
+                gettimeofday(&start, NULL);
+                gettimeofday(&stop, NULL);
+                int timestampSec = stop.tv_sec - start.tv_sec;
+                int timestampUSec = stop.tv_usec - start.tv_usec;
+                int messageCount = 1;
+                while (timestampSec <= 30) {
+                    int minutes = (timestampSec) / 60;
+                    int seconds = (timestampSec) % 60;
+                    int microseconds = abs((timestampUSec) / 100);
+                    snprintf(messageString, sizeof(messageString), "%ld:%02ld.%03d: Child 3 message %d",
+                             minutes, seconds, microseconds, messageCount);
+                    write(fd[WRITE_END], messageString, (strlen(messageString) + 1));
+                    sleep(RandomNumberGenerator(0, 2));
+                    messageCount++;
+                    gettimeofday(&stop, NULL);
+                    timestampSec = stop.tv_sec - start.tv_sec;
+                    timestampUSec = stop.tv_usec - start.tv_usec;
+                }
+                exit(0);
+            } else {
+                pid4 = fork();
+                if (pid4 == 0) {
+                    // close input side
+                    close(fd[READ_END]);
+                    // CHILD PROCESS.
+                    struct timeval stop, start;
+                    char messageString[48];
+                    // sets initial time
+                    gettimeofday(&start, NULL);
+                    gettimeofday(&stop, NULL);
+                    int timestampSec = stop.tv_sec - start.tv_sec;
+                    int timestampUSec = stop.tv_usec - start.tv_usec;
+                    int messageCount = 1;
+                    while (timestampSec <= 30) {
+                        int minutes = (timestampSec) / 60;
+                        int seconds = (timestampSec) % 60;
+                        int microseconds = abs((timestampUSec) / 100);
+                        snprintf(messageString, sizeof(messageString), "%ld:%02ld.%03d: Child 4 message %d",
+                                 minutes, seconds, microseconds, messageCount);
+                        write(fd[WRITE_END], messageString, (strlen(messageString) + 1));
+                        sleep(RandomNumberGenerator(0, 2));
+                        messageCount++;
+                        gettimeofday(&stop, NULL);
+                        timestampSec = stop.tv_sec - start.tv_sec;
+                        timestampUSec = stop.tv_usec - start.tv_usec;
+                    }
+                    exit(0);
+                } else {
+                    // special input child
+                    pid5 = fork();
+                    if (pid5 == 0) {
+                        // close input side
+                        close(fd[READ_END]);
+                        // CHILD PROCESS.
+                        struct timeval stop, start;
+                        char messageString[48];
+                        // sets initial time
+                        gettimeofday(&start, NULL);
+                        gettimeofday(&stop, NULL);
+                        int timestampSec = stop.tv_sec - start.tv_sec;
+                        int timestampUSec = stop.tv_usec - start.tv_usec;
+                        int messageCount = 1;
+                        while (timestampSec <= 30) {
+                            int minutes = (timestampSec) / 60;
+                            int seconds = (timestampSec) % 60;
+                            int microseconds = abs((timestampUSec) / 100);
+                            snprintf(messageString, sizeof(messageString), "%ld:%02ld.%03d: Child 5 message %d",
+                                     minutes, seconds, microseconds, messageCount);
+                            write(fd[WRITE_END], messageString, (strlen(messageString) + 1));
+                            sleep(RandomNumberGenerator(0, 2));
+                            messageCount++;
+                            gettimeofday(&stop, NULL);
+                            timestampSec = stop.tv_sec - start.tv_sec;
+                            timestampUSec = stop.tv_usec - start.tv_usec;
+                        }
+                        exit(0);
+                    } else {
+
+                    }
+                }
+            }
+        }
+        // close output side
+        close(fd[WRITE_END]);
+
+        while (read(fd[READ_END], readbuffer, sizeof(readbuffer)) > 0) {
+            printf("%s\n", readbuffer);
         }
     }
 
