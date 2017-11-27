@@ -6,19 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/select.c
+/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/pipe.c
 stdio.h
--
-stdlib.h
--
-fcntl.h
 -
 unistd.h
 -
 sys/types.h
 -
-sys/time.h
--
-sys/ioctl.h
+string.h
 -
 

@@ -150,60 +150,6 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/hw6.dir/build.make CMakeFiles/hw6.dir/main.c.s
 .PHONY : main.c.s
 
-pipe.o: pipe.c.o
-
-.PHONY : pipe.o
-
-# target to build an object file
-pipe.c.o:
-	$(MAKE) -f CMakeFiles/hw6.dir/build.make CMakeFiles/hw6.dir/pipe.c.o
-.PHONY : pipe.c.o
-
-pipe.i: pipe.c.i
-
-.PHONY : pipe.i
-
-# target to preprocess a source file
-pipe.c.i:
-	$(MAKE) -f CMakeFiles/hw6.dir/build.make CMakeFiles/hw6.dir/pipe.c.i
-.PHONY : pipe.c.i
-
-pipe.s: pipe.c.s
-
-.PHONY : pipe.s
-
-# target to generate assembly for a file
-pipe.c.s:
-	$(MAKE) -f CMakeFiles/hw6.dir/build.make CMakeFiles/hw6.dir/pipe.c.s
-.PHONY : pipe.c.s
-
-select.o: select.c.o
-
-.PHONY : select.o
-
-# target to build an object file
-select.c.o:
-	$(MAKE) -f CMakeFiles/hw6.dir/build.make CMakeFiles/hw6.dir/select.c.o
-.PHONY : select.c.o
-
-select.i: select.c.i
-
-.PHONY : select.i
-
-# target to preprocess a source file
-select.c.i:
-	$(MAKE) -f CMakeFiles/hw6.dir/build.make CMakeFiles/hw6.dir/select.c.i
-.PHONY : select.c.i
-
-select.s: select.c.s
-
-.PHONY : select.s
-
-# target to generate assembly for a file
-select.c.s:
-	$(MAKE) -f CMakeFiles/hw6.dir/build.make CMakeFiles/hw6.dir/select.c.s
-.PHONY : select.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -216,12 +162,6 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... pipe.o"
-	@echo "... pipe.i"
-	@echo "... pipe.s"
-	@echo "... select.o"
-	@echo "... select.i"
-	@echo "... select.s"
 .PHONY : help
 
 

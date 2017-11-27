@@ -83,12 +83,6 @@
 		<Unit filename="/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/main.c">
 			<Option target="hw6"/>
 		</Unit>
-		<Unit filename="/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/pipe.c">
-			<Option target="hw6"/>
-		</Unit>
-		<Unit filename="/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/select.c">
-			<Option target="hw6"/>
-		</Unit>
 		<Unit filename="/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

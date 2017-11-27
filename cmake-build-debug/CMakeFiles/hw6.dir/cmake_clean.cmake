@@ -1,7 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/hw6.dir/main.c.o"
-  "CMakeFiles/hw6.dir/pipe.c.o"
-  "CMakeFiles/hw6.dir/select.c.o"
   "hw6.pdb"
   "hw6"
 )

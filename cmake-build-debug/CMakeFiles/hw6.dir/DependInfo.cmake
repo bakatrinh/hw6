@@ -5,8 +5,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/main.c" "/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/cmake-build-debug/CMakeFiles/hw6.dir/main.c.o"
-  "/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/pipe.c" "/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/cmake-build-debug/CMakeFiles/hw6.dir/pipe.c.o"
-  "/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/select.c" "/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/cmake-build-debug/CMakeFiles/hw6.dir/select.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
