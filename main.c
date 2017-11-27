@@ -7,10 +7,13 @@
 #include <fcntl.h>
 #include <sys/time.h>
 #include <sys/ioctl.h>
+#include <pthread.h>
 
-#define BUFFER_SIZE 32
+#define BUFFER_SIZE 128
 #define READ_END     0
 #define WRITE_END    1
+
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 
 void getInput() {
     char buffer[128];
@@ -82,12 +85,11 @@ int RandomNumberGenerator(const int nMin, const int nMax) {
 
 int main(int argc, char **argv) {
 
-    char write_msg[BUFFER_SIZE] = "You're my child process!";
+    char write_msg[BUFFER_SIZE];
     char read_msg[BUFFER_SIZE];
 
     pid_t pid1, pid2, pid3, pid4, pid5;
     int fd[2];  // file descriptors for the pipe
-    char readbuffer[80];
 
     // Create the pipe.
     if (pipe(fd) == -1) {
@@ -100,7 +102,6 @@ int main(int argc, char **argv) {
         close(fd[READ_END]);
         // CHILD PROCESS.
         struct timeval stop, start;
-        char messageString[48];
         // sets initial time
         gettimeofday(&start, NULL);
         gettimeofday(&stop, NULL);
@@ -111,9 +112,9 @@ int main(int argc, char **argv) {
             int minutes = (timestampSec) / 60;
             int seconds = (timestampSec) % 60;
             int microseconds = abs((timestampUSec) / 100);
-            snprintf(messageString, sizeof(messageString), "%ld:%02ld.%03d: Child 1 message %d",
+            snprintf(write_msg, BUFFER_SIZE, "%ld:%02ld.%03d: Child 1 message %d",
                      minutes, seconds, microseconds, messageCount);
-            write(fd[WRITE_END], messageString, (strlen(messageString) + 1));
+            write(fd[WRITE_END], write_msg, (strlen(write_msg) + 1));
             sleep(RandomNumberGenerator(0, 2));
             messageCount++;
             gettimeofday(&stop, NULL);
@@ -128,7 +129,6 @@ int main(int argc, char **argv) {
             close(fd[READ_END]);
             // CHILD PROCESS.
             struct timeval stop, start;
-            char messageString[48];
             // sets initial time
             gettimeofday(&start, NULL);
             gettimeofday(&stop, NULL);
@@ -139,9 +139,9 @@ int main(int argc, char **argv) {
                 int minutes = (timestampSec) / 60;
                 int seconds = (timestampSec) % 60;
                 int microseconds = abs((timestampUSec) / 100);
-                snprintf(messageString, sizeof(messageString), "%ld:%02ld.%03d: Child 2 message %d",
+                snprintf(write_msg, BUFFER_SIZE, "%ld:%02ld.%03d: Child 2 message %d",
                          minutes, seconds, microseconds, messageCount);
-                write(fd[WRITE_END], messageString, (strlen(messageString) + 1));
+                write(fd[WRITE_END], write_msg, (strlen(write_msg) + 1));
                 sleep(RandomNumberGenerator(0, 2));
                 messageCount++;
                 gettimeofday(&stop, NULL);
@@ -156,7 +156,6 @@ int main(int argc, char **argv) {
                 close(fd[READ_END]);
                 // CHILD PROCESS.
                 struct timeval stop, start;
-                char messageString[48];
                 // sets initial time
                 gettimeofday(&start, NULL);
                 gettimeofday(&stop, NULL);
@@ -167,9 +166,9 @@ int main(int argc, char **argv) {
                     int minutes = (timestampSec) / 60;
                     int seconds = (timestampSec) % 60;
                     int microseconds = abs((timestampUSec) / 100);
-                    snprintf(messageString, sizeof(messageString), "%ld:%02ld.%03d: Child 3 message %d",
+                    snprintf(write_msg, BUFFER_SIZE, "%ld:%02ld.%03d: Child 3 message %d",
                              minutes, seconds, microseconds, messageCount);
-                    write(fd[WRITE_END], messageString, (strlen(messageString) + 1));
+                    write(fd[WRITE_END], write_msg, (strlen(write_msg) + 1));
                     sleep(RandomNumberGenerator(0, 2));
                     messageCount++;
                     gettimeofday(&stop, NULL);
@@ -184,7 +183,6 @@ int main(int argc, char **argv) {
                     close(fd[READ_END]);
                     // CHILD PROCESS.
                     struct timeval stop, start;
-                    char messageString[48];
                     // sets initial time
                     gettimeofday(&start, NULL);
                     gettimeofday(&stop, NULL);
@@ -195,9 +193,9 @@ int main(int argc, char **argv) {
                         int minutes = (timestampSec) / 60;
                         int seconds = (timestampSec) % 60;
                         int microseconds = abs((timestampUSec) / 100);
-                        snprintf(messageString, sizeof(messageString), "%ld:%02ld.%03d: Child 4 message %d",
+                        snprintf(write_msg, BUFFER_SIZE, "%ld:%02ld.%03d: Child 4 message %d",
                                  minutes, seconds, microseconds, messageCount);
-                        write(fd[WRITE_END], messageString, (strlen(messageString) + 1));
+                        write(fd[WRITE_END], write_msg, (strlen(write_msg) + 1));
                         sleep(RandomNumberGenerator(0, 2));
                         messageCount++;
                         gettimeofday(&stop, NULL);
@@ -213,7 +211,6 @@ int main(int argc, char **argv) {
                         close(fd[READ_END]);
                         // CHILD PROCESS.
                         struct timeval stop, start;
-                        char messageString[48];
                         // sets initial time
                         gettimeofday(&start, NULL);
                         gettimeofday(&stop, NULL);
@@ -224,9 +221,9 @@ int main(int argc, char **argv) {
                             int minutes = (timestampSec) / 60;
                             int seconds = (timestampSec) % 60;
                             int microseconds = abs((timestampUSec) / 100);
-                            snprintf(messageString, sizeof(messageString), "%ld:%02ld.%03d: Child 5 message %d",
+                            snprintf(write_msg, BUFFER_SIZE, "%ld:%02ld.%03d: Child 5 message %d",
                                      minutes, seconds, microseconds, messageCount);
-                            write(fd[WRITE_END], messageString, (strlen(messageString) + 1));
+                            write(fd[WRITE_END], write_msg, (strlen(write_msg) + 1));
                             sleep(RandomNumberGenerator(0, 2));
                             messageCount++;
                             gettimeofday(&stop, NULL);
@@ -240,11 +237,12 @@ int main(int argc, char **argv) {
                 }
             }
         }
+
         // close output side
         close(fd[WRITE_END]);
 
-        while (read(fd[READ_END], readbuffer, sizeof(readbuffer)) > 0) {
-            printf("%s\n", readbuffer);
+        while (read(fd[READ_END], read_msg, BUFFER_SIZE) > 0) {
+            printf("%s\n", read_msg);
         }
     }
 
