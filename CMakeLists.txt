@@ -3,5 +3,5 @@ project(hw6)
 
 set(CMAKE_C_STANDARD 99)
 
-set(SOURCE_FILES main.c)
-add_executable(hw6 ${SOURCE_FILES})
+FILE(GLOB MyCSources *.c)
+ADD_EXECUTABLE(hw6 ${MyCSources})

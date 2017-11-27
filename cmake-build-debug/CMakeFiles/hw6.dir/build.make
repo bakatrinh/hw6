@@ -81,17 +81,69 @@ CMakeFiles/hw6.dir/main.c.o.provides: CMakeFiles/hw6.dir/main.c.o.requires
 CMakeFiles/hw6.dir/main.c.o.provides.build: CMakeFiles/hw6.dir/main.c.o
 
 
+CMakeFiles/hw6.dir/pipe.c.o: CMakeFiles/hw6.dir/flags.make
+CMakeFiles/hw6.dir/pipe.c.o: ../pipe.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/hw6.dir/pipe.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hw6.dir/pipe.c.o   -c "/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/pipe.c"
+
+CMakeFiles/hw6.dir/pipe.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hw6.dir/pipe.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/pipe.c" > CMakeFiles/hw6.dir/pipe.c.i
+
+CMakeFiles/hw6.dir/pipe.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hw6.dir/pipe.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/pipe.c" -o CMakeFiles/hw6.dir/pipe.c.s
+
+CMakeFiles/hw6.dir/pipe.c.o.requires:
+
+.PHONY : CMakeFiles/hw6.dir/pipe.c.o.requires
+
+CMakeFiles/hw6.dir/pipe.c.o.provides: CMakeFiles/hw6.dir/pipe.c.o.requires
+	$(MAKE) -f CMakeFiles/hw6.dir/build.make CMakeFiles/hw6.dir/pipe.c.o.provides.build
+.PHONY : CMakeFiles/hw6.dir/pipe.c.o.provides
+
+CMakeFiles/hw6.dir/pipe.c.o.provides.build: CMakeFiles/hw6.dir/pipe.c.o
+
+
+CMakeFiles/hw6.dir/select.c.o: CMakeFiles/hw6.dir/flags.make
+CMakeFiles/hw6.dir/select.c.o: ../select.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/hw6.dir/select.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hw6.dir/select.c.o   -c "/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/select.c"
+
+CMakeFiles/hw6.dir/select.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hw6.dir/select.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/select.c" > CMakeFiles/hw6.dir/select.c.i
+
+CMakeFiles/hw6.dir/select.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hw6.dir/select.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/select.c" -o CMakeFiles/hw6.dir/select.c.s
+
+CMakeFiles/hw6.dir/select.c.o.requires:
+
+.PHONY : CMakeFiles/hw6.dir/select.c.o.requires
+
+CMakeFiles/hw6.dir/select.c.o.provides: CMakeFiles/hw6.dir/select.c.o.requires
+	$(MAKE) -f CMakeFiles/hw6.dir/build.make CMakeFiles/hw6.dir/select.c.o.provides.build
+.PHONY : CMakeFiles/hw6.dir/select.c.o.provides
+
+CMakeFiles/hw6.dir/select.c.o.provides.build: CMakeFiles/hw6.dir/select.c.o
+
+
 # Object files for target hw6
 hw6_OBJECTS = \
-"CMakeFiles/hw6.dir/main.c.o"
+"CMakeFiles/hw6.dir/main.c.o" \
+"CMakeFiles/hw6.dir/pipe.c.o" \
+"CMakeFiles/hw6.dir/select.c.o"
 
 # External object files for target hw6
 hw6_EXTERNAL_OBJECTS =
 
 hw6: CMakeFiles/hw6.dir/main.c.o
+hw6: CMakeFiles/hw6.dir/pipe.c.o
+hw6: CMakeFiles/hw6.dir/select.c.o
 hw6: CMakeFiles/hw6.dir/build.make
 hw6: CMakeFiles/hw6.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable hw6"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/trinhnguyen/Desktop/OneDrive/SJSU/2017 Fall/CS149/eclipse/eclipse_java/hw6/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable hw6"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hw6.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -100,6 +152,8 @@ CMakeFiles/hw6.dir/build: hw6
 .PHONY : CMakeFiles/hw6.dir/build
 
 CMakeFiles/hw6.dir/requires: CMakeFiles/hw6.dir/main.c.o.requires
+CMakeFiles/hw6.dir/requires: CMakeFiles/hw6.dir/pipe.c.o.requires
+CMakeFiles/hw6.dir/requires: CMakeFiles/hw6.dir/select.c.o.requires
 
 .PHONY : CMakeFiles/hw6.dir/requires
 
