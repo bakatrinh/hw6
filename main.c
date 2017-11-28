@@ -19,9 +19,11 @@ int RandomNumberGenerator(const int nMin, const int nMax) {
 }
 
 int main(int argc, char **argv) {
+    struct timeval stop, start;
+    // sets initial time
+    gettimeofday(&start, NULL);
 
     char write_msg[BUFFER_SIZE];
-    char read_msg[BUFFER_SIZE];
 
     pid_t pid1, pid2, pid3, pid4, pid5;
     int fd[2];  // file descriptors for the pipe
@@ -36,9 +38,7 @@ int main(int argc, char **argv) {
         // close input side
         close(fd[READ_END]);
         // CHILD PROCESS.
-        struct timeval stop, start;
-        // sets initial time
-        gettimeofday(&start, NULL);
+        struct timeval stop;
         gettimeofday(&stop, NULL);
         int timestampSec = stop.tv_sec - start.tv_sec;
         int timestampUSec = stop.tv_usec - start.tv_usec;
@@ -63,9 +63,7 @@ int main(int argc, char **argv) {
             // close input side
             close(fd[READ_END]);
             // CHILD PROCESS.
-            struct timeval stop, start;
-            // sets initial time
-            gettimeofday(&start, NULL);
+            struct timeval stop;
             gettimeofday(&stop, NULL);
             int timestampSec = stop.tv_sec - start.tv_sec;
             int timestampUSec = stop.tv_usec - start.tv_usec;
@@ -90,9 +88,7 @@ int main(int argc, char **argv) {
                 // close input side
                 close(fd[READ_END]);
                 // CHILD PROCESS.
-                struct timeval stop, start;
-                // sets initial time
-                gettimeofday(&start, NULL);
+                struct timeval stop;
                 gettimeofday(&stop, NULL);
                 int timestampSec = stop.tv_sec - start.tv_sec;
                 int timestampUSec = stop.tv_usec - start.tv_usec;
@@ -117,9 +113,7 @@ int main(int argc, char **argv) {
                     // close input side
                     close(fd[READ_END]);
                     // CHILD PROCESS.
-                    struct timeval stop, start;
-                    // sets initial time
-                    gettimeofday(&start, NULL);
+                    struct timeval stop;
                     gettimeofday(&stop, NULL);
                     int timestampSec = stop.tv_sec - start.tv_sec;
                     int timestampUSec = stop.tv_usec - start.tv_usec;
@@ -155,16 +149,14 @@ int main(int argc, char **argv) {
 
                         //  Wait for input on stdin for a maximum of 2.5 seconds.
                         // CHILD PROCESS.
-                        struct timeval stop, start;
-                        // sets initial time
-                        gettimeofday(&start, NULL);
+                        struct timeval stop;
                         gettimeofday(&stop, NULL);
                         int timestampSec = stop.tv_sec - start.tv_sec;
                         int timestampUSec = stop.tv_usec - start.tv_usec;
                         int minutes = (timestampSec) / 60;
                         int seconds = (timestampSec) % 60;
                         int microseconds = abs((timestampUSec) / 100);
-                        printf("%ld:%02ld.%03d: Enter a message: ", minutes, seconds, microseconds);
+                        printf("%ld:%02ld.%03d: Type a message: ", minutes, seconds, microseconds);
                         fflush(stdout);
                         while (timestampSec <= 30) {
                             inputfds = inputs;
@@ -190,7 +182,7 @@ int main(int argc, char **argv) {
                                     int minutes = (timestampSec) / 60;
                                     int seconds = (timestampSec) % 60;
                                     int microseconds = abs((timestampUSec) / 100);
-                                    printf("\n%ld:%02ld.%03d: Enter a message: ", minutes, seconds, microseconds);
+                                    printf("\n%ld:%02ld.%03d: Type a message: ", minutes, seconds, microseconds);
                                     fflush(stdout);
                                     break;
 
@@ -239,12 +231,18 @@ int main(int argc, char **argv) {
 
         // close output side
         close(fd[WRITE_END]);
+        struct timeval stop;
+        char read_msg[BUFFER_SIZE];
 
         FILE *f = fopen("output.txt", "wb");
         while (read(fd[READ_END], read_msg, BUFFER_SIZE) > 0) {
-            //printf("%s\n", read_msg);
-            fprintf(f, "%s\n", read_msg);
-            fflush(stdout);
+            gettimeofday(&stop, NULL);
+            int timestampSec = stop.tv_sec - start.tv_sec;
+            int timestampUSec = stop.tv_usec - start.tv_usec;
+            int minutes = (timestampSec) / 60;
+            int seconds = (timestampSec) % 60;
+            int microseconds = abs((timestampUSec) / 100);
+            fprintf(f, "Received at: %ld:%02ld.%03d - Message: %s\n", minutes, seconds, microseconds, read_msg);
         }
         int status = 0;
         wait(&status);

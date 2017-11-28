@@ -1,100 +1,94 @@
-0:00.000: Child 1 message 1
-0:01.004: Child 1 message 2
-0:01.004: Child 2 message 2
-0:01.010: Child 3 message 2
-0:01.010: Child 4 message 2
-0:02.023: Child 1 message 3
-0:02.018: Child 2 message 3
-0:02.021: Child 3 message 3
-0:02.021: Child 4 message 3
-0:02.1424: Child 5 message: hello there
+Received at: 0:00.062 - Message: 0:00.015: Child 1 message 1
+Received at: 0:01.026 - Message: 0:01.026: Child 1 message 2
+Received at: 0:01.038 - Message: 0:01.038: Child 2 message 2
+Received at: 0:01.050 - Message: 0:01.050: Child 3 message 2
+Received at: 0:01.055 - Message: 0:01.055: Child 4 message 2
+Received at: 0:02.508 - Message: 0:02.508: Child 5 message: hello
 
-0:04.026: Child 1 message 4
-0:04.029: Child 2 message 4
-0:04.033: Child 3 message 4
-0:04.032: Child 4 message 4
-0:06.037: Child 1 message 5
-0:06.035: Child 2 message 5
-0:06.043: Child 3 message 5
-0:06.035: Child 4 message 5
-0:07.046: Child 1 message 6
-0:07.042: Child 2 message 6
-0:07.047: Child 3 message 6
-0:07.045: Child 4 message 6
-0:07.795: Child 5 message: this is a test
+Received at: 0:02.030 - Message: 0:02.029: Child 1 message 3
+Received at: 0:02.040 - Message: 0:02.040: Child 2 message 3
+Received at: 0:02.062 - Message: 0:02.061: Child 3 message 3
+Received at: 0:04.040 - Message: 0:04.040: Child 1 message 4
+Received at: 0:04.050 - Message: 0:04.050: Child 2 message 4
+Received at: 0:04.065 - Message: 0:04.065: Child 3 message 4
+Received at: 0:06.051 - Message: 0:06.051: Child 1 message 5
+Received at: 0:06.061 - Message: 0:06.061: Child 2 message 5
+Received at: 0:06.075 - Message: 0:06.075: Child 3 message 5
+Received at: 0:07.207 - Message: 0:07.208: Child 5 message: 
 
-0:09.046: Child 2 message 7
-0:09.046: Child 2 message 8
-0:09.057: Child 1 message 7
-0:09.057: Child 1 message 8
-0:09.058: Child 3 message 7
-0:09.058: Child 3 message 8
-0:09.046: Child 4 message 7
-0:09.046: Child 4 message 8
-0:11.049: Child 2 message 9
-0:11.065: Child 3 message 9
-0:12.085: Child 5 message: message 5
+Received at: 0:07.053 - Message: 0:07.052: Child 1 message 6
+Received at: 0:07.072 - Message: 0:07.072: Child 2 message 6
+Received at: 0:07.086 - Message: 0:07.086: Child 3 message 6
+Received at: 0:09.063 - Message: 0:09.063: Child 1 message 7
+Received at: 0:09.063 - Message: 0:09.063: Child 1 message 8
+Received at: 0:09.073 - Message: 0:09.072: Child 2 message 7
+Received at: 0:09.097 - Message: 0:09.096: Child 4 message 7
+Received at: 0:09.097 - Message: 0:09.097: Child 4 message 8
+Received at: 0:09.097 - Message: 0:09.096: Child 3 message 7
+Received at: 0:09.097 - Message: 0:09.097: Child 3 message 8
+Received at: 0:09.4030 - Message: 0:09.4030: Child 5 message: how are you?
 
-0:13.071: Child 1 message 10
-0:13.060: Child 2 message 10
-0:13.063: Child 4 message 10
-0:14.070: Child 2 message 11
-0:14.070: Child 2 message 12
-0:14.081: Child 1 message 12
-0:14.086: Child 3 message 11
-0:14.074: Child 4 message 11
-0:16.081: Child 2 message 13
-0:16.092: Child 1 message 13
-0:16.093: Child 1 message 14
-0:16.077: Child 4 message 13
-0:16.089: Child 3 message 13
-0:16.089: Child 3 message 14
-0:17.804: Child 5 message: from process 5
+Received at: 0:11.073 - Message: 0:11.073: Child 1 message 9
+Received at: 0:11.073 - Message: 0:11.073: Child 2 message 9
+Received at: 0:11.102 - Message: 0:11.102: Child 3 message 9
+Received at: 0:13.084 - Message: 0:13.084: Child 2 message 10
+Received at: 0:13.113 - Message: 0:13.112: Child 3 message 10
+Received at: 0:14.357 - Message: 0:14.357: Child 5 message: hello world!
 
-0:18.093: Child 2 message 15
-0:18.104: Child 1 message 15
-0:18.104: Child 1 message 16
-0:18.088: Child 4 message 15
-0:18.088: Child 4 message 16
-0:18.100: Child 3 message 15
-0:18.100: Child 3 message 16
-0:20.108: Child 1 message 17
-0:20.099: Child 4 message 17
-0:21.104: Child 2 message 18
-0:21.149: Child 4 message 18
-0:21.4475: Child 5 message: hello world
+Received at: 0:14.095 - Message: 0:14.094: Child 1 message 11
+Received at: 0:14.095 - Message: 0:14.095: Child 2 message 12
+Received at: 0:14.123 - Message: 0:14.123: Child 3 message 11
+Received at: 0:14.123 - Message: 0:14.123: Child 3 message 12
+Received at: 0:14.123 - Message: 0:14.123: Child 4 message 11
+Received at: 0:14.123 - Message: 0:14.123: Child 4 message 12
+Received at: 0:16.106 - Message: 0:16.105: Child 2 message 13
+Received at: 0:16.134 - Message: 0:16.134: Child 4 message 13
+Received at: 0:18.116 - Message: 0:18.116: Child 2 message 15
+Received at: 0:18.116 - Message: 0:18.116: Child 2 message 16
+Received at: 0:18.145 - Message: 0:18.145: Child 4 message 15
+Received at: 0:18.145 - Message: 0:18.145: Child 4 message 16
+Received at: 0:19.1569 - Message: 0:19.1569: Child 5 message: test message!
 
-0:22.114: Child 2 message 19
-0:22.172: Child 3 message 19
-0:23.132: Child 1 message 20
-0:23.121: Child 2 message 20
-0:23.170: Child 4 message 20
-0:23.182: Child 3 message 20
-0:24.131: Child 2 message 21
-0:24.131: Child 2 message 22
-0:24.142: Child 1 message 21
-0:24.142: Child 1 message 22
-0:24.193: Child 3 message 21
-0:24.181: Child 4 message 22
-0:25.153: Child 1 message 23
-0:25.153: Child 1 message 24
-0:25.142: Child 2 message 24
-0:25.203: Child 3 message 23
-0:25.4259: Child 5 message: testing
+Received at: 0:20.127 - Message: 0:20.127: Child 2 message 17
+Received at: 0:20.155 - Message: 0:20.155: Child 4 message 17
+Received at: 0:21.137 - Message: 0:21.137: Child 2 message 18
+Received at: 0:21.138 - Message: 0:21.137: Child 1 message 18
+Received at: 0:21.166 - Message: 0:21.166: Child 3 message 18
+Received at: 0:21.166 - Message: 0:21.166: Child 4 message 18
+Received at: 0:22.168 - Message: 0:22.165: Child 2 message 19
+Received at: 0:22.204 - Message: 0:22.172: Child 3 message 19
+Received at: 0:23.170 - Message: 0:23.170: Child 1 message 20
+Received at: 0:23.170 - Message: 0:23.170: Child 2 message 20
+Received at: 0:23.183 - Message: 0:23.183: Child 3 message 20
+Received at: 0:23.214 - Message: 0:23.214: Child 4 message 20
+Received at: 0:23.4753 - Message: 0:23.4753: Child 5 message: how's it going?
 
-0:27.153: Child 2 message 25
-0:27.164: Child 1 message 25
-0:27.214: Child 3 message 25
-0:27.202: Child 4 message 25
-0:28.174: Child 1 message 26
-0:28.174: Child 1 message 27
-0:28.174: Child 1 message 28
-0:28.164: Child 2 message 27
-0:28.164: Child 2 message 28
-0:28.164: Child 2 message 29
-0:28.212: Child 4 message 26
-0:28.213: Child 4 message 27
-ild 4 message 29
-0:30.185: Child 1 message 30
-0:30.174: Child 2 message 30
-0:30.223: Child 4 message 30
+Received at: 0:24.180 - Message: 0:24.180: Child 2 message 21
+Received at: 0:24.180 - Message: 0:24.180: Child 2 message 22
+Received at: 0:24.180 - Message: 0:24.180: Child 1 message 22
+Received at: 0:24.193 - Message: 0:24.193: Child 3 message 21
+Received at: 0:24.193 - Message: 0:24.193: Child 3 message 22
+Received at: 0:24.225 - Message: 0:24.225: Child 4 message 21
+Received at: 0:24.225 - Message: 0:24.225: Child 4 message 22
+Received at: 0:25.191 - Message: 0:25.191: Child 1 message 23
+Received at: 0:25.191 - Message: 0:25.191: Child 1 message 24
+Received at: 0:25.200 - Message: 0:25.200: Child 3 message 23
+Received at: 0:25.235 - Message: 0:25.235: Child 4 message 23
+Received at: 0:25.235 - Message: 0:25.235: Child 4 message 24
+Received at: 0:27.196 - Message: 0:27.196: Child 2 message 25
+Received at: 0:27.210 - Message: 0:27.210: Child 3 message 25
+Received at: 0:27.246 - Message: 0:27.246: Child 4 message 25
+Received at: 0:28.207 - Message: 0:28.207: Child 1 message 26
+Received at: 0:28.207 - Message: 0:28.207: Child 1 message 27
+Received at: 0:28.207 - Message: 0:28.207: Child 1 message 28
+Received at: 0:28.207 - Message: 0:28.207: Child 2 message 27
+Received at: 0:28.207 - Message: 0:28.207: Child 2 message 28
+Received at: 0:28.207 - Message: 0:28.207: Child 2 message 29
+Received at: 0:28.221 - Message: 0:28.221: Child 3 message 26
+Received at: 0:28.256 - Message: 0:28.256: Child 4 message 26
+Received at: 0:28.257 - Message: 0:28.256: Child 4 message 29
+Received at: 0:28.1155 - Message: 0:28.1155: Child 5 message: this is a test
+
+Received at: 0:30.218 - Message: 0:30.217: Child 1 message 30
+Received at: 0:30.232 - Message: 0:30.232: Child 3 message 30
+Received at: 0:30.267 - Message: 0:30.267: Child 4 message 30
