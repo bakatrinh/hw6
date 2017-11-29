@@ -324,7 +324,7 @@ int main(int argc, char **argv) {
                             int minutes = (timestampSec) / 60;
                             int seconds = (timestampSec) % 60;
                             int microseconds = abs((timestampUSec) / 100);
-                            fprintf(f, "Received at: %ld:%02ld.%03d - Message: %s\n", minutes, seconds, microseconds, read_msg);
+                            fprintf(f, "Received at: %ld:%02ld.%03d - Message: %s", minutes, seconds, microseconds, read_msg);
                         }
                     }
                     break;
