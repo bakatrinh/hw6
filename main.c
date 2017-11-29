@@ -172,7 +172,7 @@ int main(int argc, char **argv) {
                         int minutes = (timestampSec) / 60;
                         int seconds = (timestampSec) % 60;
                         int microseconds = abs((timestampUSec) / 100);
-                        printf("%ld:%02ld.%03d: Type a message: ", minutes, seconds, microseconds);
+                        printf("%ld:%02ld.%03d: Type a message and press enter: ", minutes, seconds, microseconds);
                         fflush(stdout);
                         while (timestampSec <= 30) {
                             inputfds = inputs;
@@ -198,7 +198,7 @@ int main(int argc, char **argv) {
                                     minutes = (timestampSec) / 60;
                                     seconds = (timestampSec) % 60;
                                     microseconds = abs((timestampUSec) / 100);
-                                    printf("\n%ld:%02ld.%03d: Type a message: ", minutes, seconds, microseconds);
+                                    printf("\n%ld:%02ld.%03d: Type a message and press enter: ", minutes, seconds, microseconds);
                                     fflush(stdout);
                                     break;
 
